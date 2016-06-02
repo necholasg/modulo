@@ -16,20 +16,20 @@ mongoose.connect('mongodb://localhost:boilerExpress/boilerExpress');
 app.use(compression());
 app.use(bodyParser.json({type: '*/*'}));
 
-if(TARGET === 'build'){
+if(TARGET !== 'start'){
   // serve our static stuff like index.css
   app.use(express.static(path.join(__dirname, 'public')));
   app.get('*', function (req, res) {
     // and drop 'public' in the middle of here
     res.sendFile('index.html', { root: path.join(__dirname, './public') });
   })
-  var PORT = process.env.PORT || 8080
+  var PORT = process.env.PORT || 5000
 }
 
 router(app);
 
 var server = app.listen(PORT, function() {
-  if(PORT === 8080){
+  if(PORT === 5000){
     console.log('Production Express server running at localhost:' + PORT)
   }else{
     console.log('Development Express server running at localhost:' + PORT)
