@@ -6,3 +6,5 @@ export const MESSAGES = 'fetch_messages';
 export const NEW_MESSAGE = 'new_message';
 export const CLEAR_MESSAGES = 'clear_messages';
 export const CHAT_USERS = 'chat_users';
+export const LOAD = 'load';
+export const UNLOAD = 'unload';

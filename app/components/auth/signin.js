@@ -3,8 +3,10 @@ import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 import { Link } from 'react-router';
 const logo = require('../../../style/images/chat.svg');
+const data = { email: 'rock@gmail.com', password:'password'};
 
 class Signin extends Component {
+
   handleFormSubmit({email, password}) {
     this.props.signinUser({email, password})
   }
@@ -31,12 +33,16 @@ class Signin extends Component {
           <div className='logSide col-xs-12 col-sm-12 col-md-8'>
             <h3 className='text-center'>Welcome Back!</h3>
             <p className='text-center'>please Sign in...</p>
+            <div>
+              <button type="button" className='btn btn-block btn-theme' onClick={() => this.props.load(data)}>Load Default Account</button>
+              <br />
+            </div>
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
               <fieldset className='form-group'>
-                <input {...email} className='form-control' placeholder='Email' />
+                <input {...email} className='form-control' placeholder='Email'/>
               </fieldset>
               <fieldset className='form-group'>
-                <input {...password} type='password' className='form-control' placeholder='Password' />
+                <input {...password} type='password' className='form-control' placeholder='Password'/>
               </fieldset>
               {this.renderAlert()}
               <button action='submit' className='btn btn-block btn-theme'>Sign In</button>
@@ -50,7 +56,10 @@ class Signin extends Component {
   }
 }
 function mapStateToProps (state) {
-  return {errorMessage: state.auth.error}
+  return {
+    errorMessage: state.auth.error,
+    initialValues: state.auth.data
+  }
 }
 
 export default reduxForm ({

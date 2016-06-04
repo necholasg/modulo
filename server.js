@@ -10,7 +10,7 @@ var TARGET = process.env.npm_lifecycle_event;
 var PORT = process.env.PORT || 3000
 
 //DB Setup
-mongoose.connect('mongodb://localhost:boilerExpress/boilerExpress');
+mongoose.connect('mongodb://heroku_25vmq1ql:nl3nl60mpepl6feaep1ee8kngj@ds023213.mlab.com:23213/heroku_25vmq1ql');
 
 //App setup
 app.use(compression());

@@ -5,7 +5,9 @@ import {
   AUTH_USER,
   AUTH_ERROR,
   UNAUTH_USER,
-  DASH_INFO
+  DASH_INFO,
+  LOAD,
+  UNLOAD
 } from './types';
 
 export function signinUser({ email, password }) {
@@ -55,6 +57,19 @@ export function authError (error){
   return {
     type: AUTH_ERROR,
     payload:  error
+  }
+}
+
+export function load (data){
+  return {
+    type: LOAD,
+    payload:  data
+  }
+}
+
+export function unLoad (){
+  return {
+    type: UNLOAD
   }
 }
 

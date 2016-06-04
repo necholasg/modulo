@@ -7,7 +7,7 @@
     "start": "concurrently --kill-others \"nodemon server.js\" \"webpack-dev-server\"",
     "build:client": "webpack",
     "build:server": "webpack --config webpack.server.config.js",
-    "build": "npm run build:client && npm run build:server && nodemon server.bundle.js"
+    "build": "npm run build:client && npm run build:server"
   },
   "author": "necholas gomez",
   "license": "ISC",

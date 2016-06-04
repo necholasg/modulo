@@ -7,6 +7,7 @@ class Signout extends Component {
   componentWillMount() {
     this.props.signoutUser();
     this.props.clearMessages();
+    this.props.unLoad();
     socket.emit('loggedOut');
   }
   render () {

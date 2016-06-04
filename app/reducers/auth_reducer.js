@@ -3,7 +3,9 @@ import {
   AUTH_USER,
   UNAUTH_USER,
   AUTH_ERROR,
-  DASH_INFO
+  DASH_INFO,
+  LOAD,
+  UNLOAD
 } from '../actions/types';
 
 
@@ -17,6 +19,10 @@ export default function(state = {}, action) {
       return {...state, error: action.payload };
     case DASH_INFO:
       return {...state, message: action.payload };
+    case LOAD:
+      return {data: action.payload };
+    case UNLOAD:
+      return {data: null };
   }
   return state;
 }

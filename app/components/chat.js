@@ -46,6 +46,15 @@ class Chat extends Component {
     });
   }
 
+  componentDidUpdate(prevProps) {
+  // Check if new message was added:
+  if (this.props.messages.length === prevProps.messages.length + 1) {
+    // Scroll to bottom
+    var elem = document.getElementById("chatDiv");
+    elem.scrollTop = elem.scrollHeight;
+  }
+}
+
   render() {
     const { user, users } = this.props;
 
@@ -60,11 +69,11 @@ class Chat extends Component {
               })}
             </ul>
           </div>
-          <div className="col-xs-12 col-sm-12 col-md-9 chatBox">
+          <div className="col-xs-12 col-sm-12 col-md-9 chatBox" >
             <h2>Say Somthing</h2>
             {user &&
             <div>
-              <div className='textSpace'>
+              <div className='textSpace' id='chatDiv'>
                 <ul >
                 {this.props.messages.map((msg) => {
                   return <li key={`chat.msg.${msg.id}`}><strong>{msg.from}</strong>: {msg.text}</li>;
