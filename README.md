@@ -1,4 +1,4 @@
-# modulo
+# Modulo
 
 Tecnologies: MongoDB,Express.js,React, Redux, Node.js, Webpack, Babel, Passport, Socket.io, Sass, paper.js, Bootstrap and JWT.
 
@@ -22,8 +22,11 @@ Tecnologies: MongoDB,Express.js,React, Redux, Node.js, Webpack, Babel, Passport,
 - Adding all of the user produced data for drawing into state while logged in, so drawings persist through refresh like the messages.
 
 ###Screen Shots Below:###
+- - - -
 
-![alt tag](https://raw.githubusercontent.com/necholasg/imagesForReadme/Home.png)
-![alt tag](https://raw.githubusercontent.com/necholasg/imagesForReadme/Signin.png)
-![alt tag](https://raw.githubusercontent.com/necholasg/imagesForReadme/Dashboard.png)
+![alt tag](https://raw.githubusercontent.com/necholasg/modulo/master/imagesForReadme/Home.png)
+
+![alt tag](https://raw.githubusercontent.com/necholasg/modulo/master/imagesForReadme/SignIn.png)
+
+![alt tag](https://raw.githubusercontent.com/necholasg/modulo/master/imagesForReadme/Dashboard.png)
 
